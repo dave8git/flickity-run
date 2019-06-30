@@ -6,6 +6,11 @@ html {
   box-sizing: inherit;
 }
 
+#map {
+	height: 1000px;
+  width: 100%;
+}
+
 img {
   max-width: 100%;
   height: auto;
