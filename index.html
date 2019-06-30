@@ -19,23 +19,29 @@
         var tablicaSow = [
             {
                 image: 'https://images.pexels.com/photos/1564839/pexels-photo-1564839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                description: '<h1>blinking sowa</h1>'
+                description: '<h1>blinking sowa</h1>', 
+                coords: {lat: 52.229676, lng: 21.012229}
             },
             {
                 image: 'https://images.pexels.com/photos/1149816/pexels-photo-1149816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                description: '<h1>staring sowa</h1>'
+                description: '<h1>staring sowa</h1>',
+                coords: {lat: 50.041187, lng: 21.999121}
             },
             {
                 image: 'https://images.pexels.com/photos/357159/pexels-photo-357159.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                description: '<h1>flying sowa</h1>'
+                description: '<h1>flying sowa</h1>',
+                coords: {lat: 54.372158, lng: 18.638306}
             },
             {
                 image: 'https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                description: '<h1>evil sowa</h1>'
+                description: '<h1>evil sowa</h1>',
+                coords: {lat: 50.0646501, lng: 19.9449799}
+
             },
             {
                 image: 'https://images.pexels.com/photos/2474014/pexels-photo-2474014.jpeg?cs=srgb&dl=animal-animal-photography-avian-2474014.jpg&fm=jpg',
-                description: '<h1>confused sowa</h1>'
+                description: '<h1>confused sowa</h1>',
+                coords: {lat: 52.406374, lng: 16.9251681}
             }
         ]; 
     </script>
@@ -48,25 +54,19 @@
         </div>
     </script>
     <script>
-        	// Definujemy funkcję initMap w zakresie globalnym (czyli jako właściwość obiektu window).
+    var marker = [];;
   	window.initMap = function() {
-		
-		// Zapisujemy w zmiennej obiekt zawierający współrzędne geograficzne.
-		var uluru = {lat: -25.363, lng: 131.044};
-		
-		// W zmiennej map zapisujemy nową instancję obiektu Map. 
 		var map = new google.maps.Map(document.getElementById('map'), {
-			// Podajemy opcje mapy, np. zoom i punkt wycentrowania mapy.
 			zoom: 4,
-			center: uluru
+			center: tablicaSow[0].coords
 		});
-		
-		// Definiujemy marker jako nową instancję obiektu Marker.
-		var marker = new google.maps.Marker({
-			// I podajemy opcje tego markera, np. na której mapie ma być dodany oraz jakie są jego współrzędne. 
-			position: uluru,
+        
+        for (let i = 0; i < tablicaSow.length; i++) {
+            marker = new google.maps.Marker({
+			position: tablicaSow[i].coords,
 			map: map
-		}); 
+            }); 
+        }
 	}	
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPfx0KDwue4jLAu2386zb26c6rRn5SGuQ&callback=initMap"></script>
