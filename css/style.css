@@ -57,6 +57,16 @@ img {
   background: #333;
 }
 
+.main-carousel h1 {
+  font: 100px sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute; 
+  top: 20px;
+  right: 200px;
+  margin-left: 200px;
+  /* font-size: 100px; */
+}
+
 @media (max-width: 700px) {
   .carousel-cell {
     width: 33.33%;
