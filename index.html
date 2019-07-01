@@ -68,9 +68,13 @@
             }); 
             marker.addListener('click', function() {
                 flkty.select(i);
-            })
-           
+            });
         }
+        flkty.on('change', function( i ) {
+            console.log(i);
+            map.setCenter(tablicaSow[i].coords);
+            map.setZoom(20);
+        });
 	}	
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPfx0KDwue4jLAu2386zb26c6rRn5SGuQ&callback=initMap"></script>
