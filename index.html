@@ -64,8 +64,12 @@
         for (let i = 0; i < tablicaSow.length; i++) {
             marker = new google.maps.Marker({
 			position: tablicaSow[i].coords,
-			map: map
+            map: map,
             }); 
+            marker.addListener('click', function() {
+                flkty.select(i);
+            })
+           
         }
 	}	
     </script>
