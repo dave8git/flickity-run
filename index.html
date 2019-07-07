@@ -13,6 +13,7 @@
     <div class="main-carousel" data-flickity='{ "hash": true }'>
         
     </div>
+    <button class="button-restart">Restart</button>
     <div class="progress-bar"></div>
     <div id="map"></div>
     <script>
@@ -47,7 +48,6 @@
     </script>
     <script id="template" type="x-tmpl-mustache">
         <div class="carousel-cell cell1" id="carousel-cell1" style="background-image: url('{{ image }}')">        
-            <button class="button button-restart" data-selector=".cell1">Restart</button>
             <div class="text-container">
                 {{{ description }}}
             </div>       
@@ -71,7 +71,6 @@
             });
         }
         flkty.on('change', function( i ) {
-            console.log(i);
             map.setCenter(tablicaSow[i].coords);
             map.setZoom(20);
         });
